@@ -13,7 +13,7 @@ proxy = proxies.get_proxies(limit=1, filter_sources=["best", "hmn", "pub"])[0]
 requests.get(url, proxies=proxy["proxy"])
 ...
 ```
-proxy output example
+proxy output example (info fields are custom for each source)
 ```
 [{'info': {'IP Address': '35.221.107.127',
    'Port': '3128',
@@ -32,8 +32,7 @@ but you can clear cache with `empty_cache` param, for more details type`proxies.
 
 ## Supported sources
 
-* https://www.us-proxy.org/
-* http://pubproxy.com
+Check [this file](./scrapeproxy/proxy_sources.py)
 
 ## How to contribute
 
