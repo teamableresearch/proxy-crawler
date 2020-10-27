@@ -41,7 +41,7 @@ class Proxy_list_proxyorg:
             proxy_dicts = proxy_dicts[:limit]
             return proxy_dicts
         except Exception:
-            print("Unexpected error : TRACEBACK \n", traceback.format_exc())
+            print("[ERROR] Unexpected error : TRACEBACK \n", traceback.format_exc())
             return []
 
     def scrape_proxies(self, url):
@@ -73,5 +73,5 @@ class Proxy_list_proxyorg:
             proxy_dicts = [dict(zip(header, proxy)) for proxy in proxy_list]
             return proxy_dicts
         except Exception:
-            print("Unexpected error : TRACEBACK \n", traceback.format_exc())
+            print("[ERROR] Unexpected error : TRACEBACK \n", traceback.format_exc())
             return []

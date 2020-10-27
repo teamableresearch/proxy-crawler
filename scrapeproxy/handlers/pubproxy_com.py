@@ -37,7 +37,7 @@ class Proxy_list_pubproxy:
             proxy_dicts = self.scrape_proxies(url)
             return proxy_dicts
         except Exception:
-            print("Unexpected error : TRACEBACK \n", traceback.format_exc())
+            print("[ERROR] Unexpected error : TRACEBACK \n", traceback.format_exc())
             return []
 
     def get_proxy_dict(self, proxy_string):
@@ -50,7 +50,7 @@ class Proxy_list_pubproxy:
         try:
             result = requests.get(url)
             if result.status_code != 200:
-                print("Seems pub-proxy service is down! \n" + result.reason)
+                print("[ERROR] Seems pub-proxy service is down! \n" + result.reason)
                 return []
             result_json = result.json().get("data", [])
             proxy_list = [[proxy, self.get_proxy_dict(proxy["ipPort"]), proxy["ipPort"], "http://pubproxy.com"]
@@ -59,5 +59,5 @@ class Proxy_list_pubproxy:
             proxy_dicts = [dict(zip(header, proxy)) for proxy in proxy_list]
             return proxy_dicts
         except Exception:
-            print("Unexpected error : TRACEBACK \n", traceback.format_exc())
+            print("[ERROR] Unexpected error : TRACEBACK \n", traceback.format_exc())
             return []

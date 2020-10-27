@@ -41,14 +41,14 @@ class Proxy_list_proxylist:
             proxy_dicts = list({p['proxy_string']: p for p in proxy_dicts}.values())
             return proxy_dicts
         except Exception:
-            print("Unexpected error : TRACEBACK \n", traceback.format_exc())
+            print("[ERROR] Unexpected error : TRACEBACK \n", traceback.format_exc())
             return []
 
     def scrape_proxies(self, url, anonymity):
         try:
             result = requests.get(url)
             if result.status_code != 200:
-                print("Seems pub-proxy service is down! \n" + result.reason)
+                print("[ERROR] Seems pub-proxy service is down! \n" + result.reason)
                 return []
             proxies = result.text.split()
             proxies = [{
@@ -59,5 +59,5 @@ class Proxy_list_proxylist:
 
             return proxies
         except:
-            print("https://www.proxy-list.download IS NOT WORKING PROPERLY")
+            print("[ERROR] https://www.proxy-list.download IS NOT WORKING PROPERLY")
             return []

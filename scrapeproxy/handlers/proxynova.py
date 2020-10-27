@@ -105,7 +105,7 @@ class Proxy_list_proxynova:
                     proxy_dicts.append(proxy_dict)
                 return proxy_dicts
         except Exception:
-            print("Unexpected error [ProxyNova source is not working!] : TRACEBACK \n",
+            print("[ERROR] Unexpected error [ProxyNova source is not working!] : TRACEBACK \n",
                 traceback.format_exc(), '\n', url)
             pass
 

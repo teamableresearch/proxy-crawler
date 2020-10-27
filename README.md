@@ -1,7 +1,7 @@
 # Getting proxies from public sources
 
 ### How to install
-`pip install scrape-proxies`
+`pip install proxy-crawler`
 
 ### How to use
 
