@@ -9,8 +9,10 @@ Usage
 ```
 import requests
 from scrapeproxy import proxies
-proxy = proxies.get_proxies(limit=1, filter_sources=["best", "hmn", "pub"])[0]
-requests.get(url, proxies=proxy["proxy"])
+# example of filters
+# proxy = proxies.get_proxies(limit=1, filter_sources=["best", "hmn", "pub"])[0]
+proxy = proxies.get_proxies()
+requests.get(url, proxies=proxy[0]["proxy"])
 ...
 ```
 proxy output example (info fields are custom for each source)
@@ -29,6 +31,8 @@ proxy output example (info fields are custom for each source)
 ```
 NOTE : by default it holds cache(session-wide, so new import new cache) and does not return the same proxy multiple times,
 but you can clear cache with `empty_cache` param, for more details type`proxies.get_proxies?`
+
+NOTE : we are trying to crawl large number of proxies so the quality may be not the best, we suggest to set short timeouts (ex. 3 seconds) and use that to ignore the proxies which are too slow or unresponsive.
 
 ## Supported sources
 
