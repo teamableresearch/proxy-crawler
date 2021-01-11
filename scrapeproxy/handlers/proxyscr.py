@@ -60,6 +60,8 @@ class Proxy_list_proxyscrp:
             proxy_list = []
             for line in res_list:
                 proxy_string = line
+                if isinstance(proxy_string, bytes):
+                    proxy_string = proxy_string.decode()
                 proxy = []
                 proxy.append({
                     "http": proxy_string,
