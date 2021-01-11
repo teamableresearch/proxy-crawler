@@ -10,7 +10,7 @@ Usage
 import requests
 from scrapeproxy import proxies
 # example of filters
-# proxy = proxies.get_proxies(limit=1, filter_sources=["best", "hmn", "pub"])[0]
+# proxy = proxies.get_proxies(limit=1, filter_sources=["best", "hmn", "pub"])
 proxy = proxies.get_proxies()
 requests.get(url, proxies=proxy[0]["proxy"])
 ...
